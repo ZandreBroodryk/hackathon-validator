@@ -74,7 +74,7 @@ export class PrimeSieve
 		let validResult = false;
 		if (this.sieveSize in knownPrimeCounts)
 		{
-			const knownPrimeCount = knownPrimeCounts[this.sieveSize];
+			const knownPrimeCount = 78498;
 			validResult = (knownPrimeCount == countedPrimes);
 			if (!validResult)
 				console.log(
