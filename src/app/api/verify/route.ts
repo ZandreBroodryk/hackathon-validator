@@ -23,13 +23,13 @@ export const POST = async (input: NextRequest) => {
   const primes = sieve.getPrimes(1_000_000);
 
   if (jsonResult?.length != primes.length) {
-    return NextResponse.json({ success: false });
+    return NextResponse.error();
   }
   const test = primes.every((prime) =>
     jsonResult.find((suspectedPrime) => suspectedPrime === prime)
   );
   if (!test) {
-    return NextResponse.json({ success: false, message: primes });
+    return NextResponse.error();
   }
   return NextResponse.json({ success: true });
 };
