@@ -29,7 +29,7 @@ export const POST = async (input: NextRequest) => {
     jsonResult.find((suspectedPrime) => suspectedPrime === prime)
   );
   if (!test) {
-    return NextResponse.json({ success: false });
+    return NextResponse.json({ success: false, message: primes });
   }
   return NextResponse.json({ success: true });
 };
